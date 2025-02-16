@@ -8,5 +8,37 @@
 <body>
     <h1>Rive Tests</h1>
     <!-- Additional content goes here -->
+
+
+    <canvas id="canvas" width="640" height="360"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas@2.17.3"></script>
+
+
+    
+
+    <script>
+        const r = new rive.Rive({
+            src: "magnet.riv",
+            //src: "https://cdn.rive.app/animations/vehicles.riv",
+            // OR the path to a discoverable and public Rive asset
+            //src: '/public/magnet.riv',
+            canvas: document.getElementById("canvas"),
+            autoplay: true,
+            // artboard: "Arboard", // Optional. If not supplied the default is selected
+            stateMachines: "Magnet",
+            onLoad: () => {
+              r.resizeDrawingSurfaceToCanvas();
+            },
+        });
+    </script>
+
+
+
 </body>
+
+
+
+
+
 </html>
