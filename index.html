@@ -5,34 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Page Title</title>
 </head>
-<body>
-    <h1>Rive Tests</h1>
-    <!-- Additional content goes here -->
-
-
-    <canvas id="canvas" width="640" height="360"></canvas>
-
-    <script src="https://unpkg.com/@rive-app/canvas"></script>
-
-
+<body> 
     
+    <canvas id="canvas1" width="360" height="240"></canvas>
+    <canvas id="canvas2" width="360" height="240"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas"></script>   
 
     <script>
-        const r = new rive.Rive({
-            //src: "magnet.riv",
-            src: "bar.riv",
-
-            //src: "https://cdn.rive.app/animations/vehicles.riv",
-            // OR the path to a discoverable and public Rive asset
-            //src: '/public/magnet.riv',
-            canvas: document.getElementById("canvas"),
-            autoplay: true,
-            // artboard: "Arboard", // Optional. If not supplied the default is selected
-            //artboard: "Arboard",
-            //stateMachines: "Magnet",
+        const r1 = new rive.Rive({            
+            src: "bar.riv",           
+            canvas: document.getElementById("canvas1"),
+            autoplay: true,            
+            //artboard: "Arboard",            
             stateMachines: "State Machine 1",
             onLoad: () => {
-              r.resizeDrawingSurfaceToCanvas();
+              r1.resizeDrawingSurfaceToCanvas();
+            },
+        });
+    </script>
+
+
+    <script>
+        const r2 = new rive.Rive({
+            src: "magnet.riv",       
+            canvas: document.getElementById("canvas2"),
+            autoplay: true,
+            artboard: "ArtboardMagnet",
+            stateMachines: "Magnet",            
+            onLoad: () => {
+                //r2.resizeDrawingSurfaceToCanvas();
             },
         });
     </script>
